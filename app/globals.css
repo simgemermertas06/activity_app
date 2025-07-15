@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900 transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-neutral-900 text-gray-100;
+}
+
+/* Seçili yazı efekti */
+::selection {
+  background-color: #52357b;
+  color: white;
+}
+
+/* Dark mode seçili yazı */
+html.dark ::selection {
+  background-color: #e3de61;
+  color: #52357b;
+}
+
+/* Scrollbar (light mode) */
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #52357b;
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #e3de61;
+}
+
+/* Scrollbar (dark mode) */
+html.dark::-webkit-scrollbar-thumb {
+  background-color: #e3de61;
+}
+
+html.dark::-webkit-scrollbar-track {
+  background-color: #52357b;
+}
+
+/* Firefox için */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #52357b #e3de61;
+}
+
+html.dark {
+  scrollbar-color: #e3de61 #52357b;
+}
+
+/* ----- Scrollbar Hide Class (Tailwind kullanarak) ----- */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
