@@ -68,9 +68,9 @@ export default function DateRangePicker() {
 
   // Tek tarih seçildiğinde endDate'i günün son anı yaparak ayarla
   const handleRangeChange = (item: DateRangeSelection) => {
-    let { startDate, endDate } = item.selection;
+    const { startDate } = item.selection;
+    let endDate = item.selection.endDate;
 
-    // Eğer startDate ile endDate aynıysa, endDate'i günün son anı olarak ayarla
     if (startDate.toDateString() === endDate.toDateString()) {
       endDate = new Date(startDate);
       endDate.setHours(23, 59, 59, 999);
