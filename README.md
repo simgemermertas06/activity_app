@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Etkinlik Takip Paneli Uygulaması
 
-## Getting Started
+## Proje Açıklaması
 
-First, run the development server:
+Bu proje, React ve Next.js tabanlı bir **Etkinlik Takip Uygulaması** dır.  
+Kullanıcılar; farklı kategorilerdeki etkinlikleri filtreleyebilir, arama yapabilir, tarih aralığı seçebilir ve favorilerine etkinlik ekleyip çıkarabilirler.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Proje Yapısı
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `/app`  
+  Next.js sayfaları ve ana uygulama klasörü.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `/components`  
+  React bileşenleri (ActivityCard, FilterBar, CategorySlider vb.).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/context`  
+  Uygulama genelinde kullanılan Context API dosyaları (Favoriler, Filtreler, Tema).
 
-## Learn More
+- `/constants`  
+  Statik etkinlik ve kategori verilerini TypeScript ile tip güvenli şekilde tutar.
 
-To learn more about Next.js, take a look at the following resources:
+- `/public/images`  
+  Proje içinde kullanılan statik resimler.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/global.css`  
+  Projenin genel stil dosyaları (scroll ayarları, açık/koyu tema renkleri vb.).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/activity/[id]/page.tsx`  
+  Dinamik etkinlik detay sayfası, "[id]" parametresi ile yönlendirme.
 
-## Deploy on Vercel
+## Kurulum Adımları:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 1. Depoyu klonlayın:
+     git clone https://github.com/simgemermertas06/activity_app.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 2. Proje klasörüne gidin:
+     cd activity_app
+
+- 3. Gerekli paketleri yükleyin:
+     npm install _veya_ yarn
+
+- 4. Geliştirme sunucusunu başlatın:
+     npm run dev _veya_ yarn dev
+
+- 5. Tarayıcıda http://localhost:3000 adresini açın
+
+## Kullanılan Teknolojiler:
+
+- **Next.js** — React tabanlı, sunucu tarafı render ve statik site oluşturma framework'ü.
+- **React** — Kullanıcı arayüzü geliştirmek için kullanılan JavaScript kütüphanesi.
+- **TypeScript** — JavaScript'e tip güvenliği ekleyen programlama dili.
+- **Tailwind CSS** — Utility-first CSS framework ile hızlı ve esnek stil oluşturma.
+- **React Context API** — Global state yönetimi için React’in yerleşik çözümü.
+- **react-icons** — Projede ikon kullanımı için gereken React ikon kütüphanesi.
+- **AOS (Animate On Scroll)** — Sayfa scroll animasyonları için kullanılan kütüphane.
+- **localStorage** — Favori etkinliklerin tarayıcıda saklanması için kullanılan Web API.
